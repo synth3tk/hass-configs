@@ -57,3 +57,9 @@ device_tracker:
     username: !secret router_user
     password: !secret router_pass
     track_new_devices: yes
+
+notify:
+  - name: slack
+    platform: slack
+    api_key: !secret slack_key
+    default_channel: !secret slack_channel
