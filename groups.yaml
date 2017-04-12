@@ -1,0 +1,5 @@
+person_dave:
+  name: Dave
+  entities:
+    - device_tracker.dave_phone
+    - device_tracker.dave_gearfit2
