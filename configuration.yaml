@@ -63,3 +63,10 @@ notify:
     platform: slack
     api_key: !secret slack_key
     default_channel: !secret slack_channel
+
+input_boolean:
+  rocky_fed:
+    name: Was Rocky fed?
+    initial: off
+    icon: mdi:cat
+
