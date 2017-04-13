@@ -3,3 +3,10 @@ person_dave:
   entities:
     - device_tracker.dave_phone
     - device_tracker.dave_gearfit2
+
+person_chris:
+  name: Chris
+  entities:
+   - device_tracker.chris_phone
+   - device_tracker.chris_tablet
+   - device_tracker.chris_laptop
