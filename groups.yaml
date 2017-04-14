@@ -17,3 +17,12 @@ room_dave:
   entities:
    - light.david___dresser
    - light.david__desk
+
+room_living:
+  name: Living Room
+  view: yes
+  entities:
+   - light.lv_top
+   - light.lv_middle
+   - light.lv_bottom
+   - device_tracker.chromecast
