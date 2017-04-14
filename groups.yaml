@@ -10,3 +10,10 @@ person_chris:
    - device_tracker.chris_phone
    - device_tracker.chris_tablet
    - device_tracker.chris_laptop
+
+room_dave:
+  name: David's Room
+  view: yes
+  entities:
+   - light.david___dresser
+   - light.david__desk
