@@ -1,0 +1,22 @@
+- alias: Notify Slack when someone arrives home
+  trigger:
+    platform: state
+    entity_id: group.person_dave, group.person_chris
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: notify.slack
+    data_template:
+      message: 'Someone arrived home'
+
+- alias: Notify Slack when someone leaves home
+  trigger:
+    platform: state
+    entity_id: group.person_dave, group.person_chris
+    from: 'home'
+    to: 'not_home'
+  action:
+    service: notify.slack
+    data:
+      message: 'Someone left the home'
+

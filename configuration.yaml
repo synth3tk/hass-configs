@@ -70,3 +70,5 @@ input_boolean:
     initial: off
     icon: mdi:cat
 
+automation: !include automation.yaml
+
