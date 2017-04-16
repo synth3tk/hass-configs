@@ -7,7 +7,7 @@
   action:
     service: notify.slack
     data_template:
-      message: 'Someone arrived home'
+      message: '{{ trigger.from_state.attributes.friendly_name }} arrived home'
 
 - alias: Notify Slack when someone leaves home
   trigger:
@@ -17,6 +17,6 @@
     to: 'not_home'
   action:
     service: notify.slack
-    data:
-      message: 'Someone left the home'
+    data_template:
+      message: '{{ trigger.from_state.attributes.friendly_name }} left the home'
 
