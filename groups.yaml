@@ -3,8 +3,7 @@ default_view:
   icon: mdi:home
   entities:
    - group.weather
-   - group.person_dave
-   - group.person_chris
+   - group.people
    - group.all_lights
    - sun.sun
 
@@ -28,6 +27,12 @@ person_chris:
    - device_tracker.chris_phone
    - device_tracker.chris_tablet
    - device_tracker.chris_laptop
+
+people:
+  name: Family
+  entities:
+   - group.person_dave
+   - group.person_chris
 
 lights_dave:
   name: Dave's Lights
