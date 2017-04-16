@@ -1,3 +1,13 @@
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+   - group.person_dave
+   - group.person_chris
+   - group.all_lights
+   - sensor.yr_symbol
+   - sun.sun
+
 person_dave:
   name: Dave
   entities:
