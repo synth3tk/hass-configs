@@ -2,11 +2,19 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
+   - group.weather
    - group.person_dave
    - group.person_chris
    - group.all_lights
-   - sensor.yr_symbol
    - sun.sun
+
+weather:
+  name: Weather
+  entities:
+   - sensor.dark_sky_summary
+   - sensor.weather_apparent_temperature
+   - sensor.weather_daily_high_apparent_temperature
+   - sensor.weather_precip
 
 person_dave:
   name: Dave

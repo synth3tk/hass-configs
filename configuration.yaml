@@ -43,7 +43,15 @@ sun:
 
 # Weather Prediction
 sensor:
-  platform: yr
+  platform: darksky
+  api_key: !secret weather_key
+  name: Weather
+  monitored_conditions:
+   - summary
+   - apparent_temperature
+   - apparent_temperature_max
+   - precip_type
+  update_interval: '00:10'
 
 # Text to speech
 tts:
