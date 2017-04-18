@@ -5,6 +5,7 @@ default_view:
    - group.weather
    - group.people
    - group.all_lights
+   - switch.flux
    - sun.sun
 
 weather:
