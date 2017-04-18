@@ -1,0 +1,12 @@
+- alias: Turn on Dave's lights at sunset when he's home
+  trigger:
+    platform: numeric_state
+    entity_id: sun.sun
+    value_template: '{{ state.attributes.elevation }}'
+    below: 2.0
+  action:
+    service: light.turn_on
+    data:
+      entity_id: group.lights_dave
+      transition: 3600
+      brightness: 255
