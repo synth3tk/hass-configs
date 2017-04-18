@@ -10,3 +10,19 @@
       entity_id: group.lights_dave
       transition: 3600
       brightness: 255
+
+- alias: Turn off Dave's lights during the day when he leaves
+  trigger:
+    platform: state
+    entity_id: group.person_dave
+    from: 'home'
+    to: 'not_home'
+  condition:
+    condition: sun
+    after: sunrise
+    before: sunset
+  action:
+    service: light.turn_off
+    data:
+      entity_id: group.lights_dave
+
