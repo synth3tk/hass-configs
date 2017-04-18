@@ -83,5 +83,14 @@ input_boolean:
     initial: off
     icon: mdi:cat
 
+switch:
+  platform: flux
+  lights:
+    - light.david___dresser
+  name: Flux
+  start_time: '6:00'
+  stop_time: '22:00'
+  disable_brightness_adjust: True
+
 automation: !include_dir_merge_list automation/
 
