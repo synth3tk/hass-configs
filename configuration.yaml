@@ -83,5 +83,5 @@ input_boolean:
     initial: off
     icon: mdi:cat
 
-automation: !include automation.yaml
+automation: !include_dir_merge_list automation/
 
