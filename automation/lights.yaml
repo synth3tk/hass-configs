@@ -21,6 +21,7 @@
     condition: sun
     after: sunrise
     before: sunset
+    before_offset: "-01:00:00"
   action:
     service: light.turn_off
     data:
