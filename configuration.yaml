@@ -86,7 +86,7 @@ input_boolean:
 switch:
   platform: flux
   lights:
-    - light.david___dresser
+    - light.david__dresser
   name: Flux
   start_time: '6:00'
   stop_time: '22:00'

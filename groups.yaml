@@ -37,7 +37,7 @@ people:
 lights_dave:
   name: Dave's Lights
   entities:
-   - light.david___dresser
+   - light.david__dresser
    - light.david__desk
 
 lights_living:
