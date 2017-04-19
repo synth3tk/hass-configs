@@ -1,4 +1,4 @@
-- alias: Turn on Dave's lights at sunset when he's home
+- alias: Turn on Dave's lights at sunset
   trigger:
     platform: numeric_state
     entity_id: sun.sun
