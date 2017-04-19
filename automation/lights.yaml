@@ -3,12 +3,12 @@
     platform: numeric_state
     entity_id: sun.sun
     value_template: '{{ state.attributes.elevation }}'
-    below: 2.0
+    below: 3.0
   action:
     service: light.turn_on
     data:
       entity_id: group.lights_dave
-      transition: 3600
+      transition: 1800
       brightness: 255
 
 - alias: Turn off Dave's lights during the day when he leaves
