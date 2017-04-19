@@ -5,6 +5,8 @@ default_view:
    - group.weather
    - group.people
    - group.all_lights
+   - input_boolean.rocky_fed
+   - group.all_automations
    - switch.flux
    - sun.sun
 
