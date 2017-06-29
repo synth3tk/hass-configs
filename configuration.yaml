@@ -78,6 +78,7 @@ device_tracker:
     username: !secret router_user
     password: !secret router_pass
     track_new_devices: yes
+  - platform: bluetooth_tracker
 
 notify:
   - name: slack

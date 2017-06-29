@@ -21,7 +21,8 @@ weather:
 person_dave:
   name: Dave
   entities:
-    - device_tracker.dave_phone
+    - device_tracker.dave_phone_wifi
+    - device_tracker.dave_phone_bt
     - device_tracker.dave_gearfit2
 
 person_chris:
