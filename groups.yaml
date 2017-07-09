@@ -9,6 +9,7 @@ default_view:
    - group.all_automations
    - switch.flux
    - sun.sun
+   - group.snapcast_clients
 
 weather:
   name: Weather
@@ -62,6 +63,7 @@ room_master:
   view: yes
   entities:
    - group.lights_master
+   - media_player.master_bedroom
 
 room_living:
   name: Living Room
@@ -69,3 +71,9 @@ room_living:
   entities:
    - group.lights_living
    - device_tracker.chromecast
+
+snapcast_clients:
+  name: Snapcast Clients
+  entities:
+   - media_player.snapcast_client_b827ebbc1f91
+   - media_player.snapcast_client_000000000000
