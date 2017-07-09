@@ -106,7 +106,13 @@ media_player:
   - platform: snapcast
     host: !secret snap_ip
   - platform: mpd
+    name: Whole Home
     host: !secret mpd_ip
+    port: !secret mpd_port_whole
+  - platform: mpd
+    name: Master Bedroom
+    host: !secret mpd_ip
+    port: !secret mpd_port_master
 
 automation: !include_dir_merge_list automation/
 
