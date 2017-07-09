@@ -1,4 +1,4 @@
-- alias: Turn on Dave's lights at sunset
+- alias: Turn on master bedroom lights at sunset
   trigger:
     platform: numeric_state
     entity_id: sun.sun
@@ -7,11 +7,11 @@
   action:
     service: light.turn_on
     data:
-      entity_id: group.lights_dave
+      entity_id: group.lights_master
       transition: 1800
       brightness: 255
 
-- alias: Turn off Dave's lights during the day when he leaves
+- alias: Turn off master bedroom lights during the day when no one's home
   trigger:
     platform: state
     entity_id: group.person_dave
@@ -25,5 +25,5 @@
   action:
     service: light.turn_off
     data:
-      entity_id: group.lights_dave
+      entity_id: group.lights_master
 

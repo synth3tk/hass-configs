@@ -44,11 +44,11 @@ people:
    - group.person_chris
    - group.person_lauren
 
-lights_dave:
-  name: Dave's Lights
+lights_master:
+  name: Master Lights
   entities:
-   - light.david__dresser
-   - light.david__desk
+   - light.master__dresser
+   - light.master__desk
 
 lights_living:
   name: Living Room Lights
@@ -57,11 +57,11 @@ lights_living:
    - light.lv_middle
    - light.lv_bottom
 
-room_dave:
-  name: David's Room
+room_master:
+  name: Master Bedroom
   view: yes
   entities:
-   - group.lights_dave
+   - group.lights_master
 
 room_living:
   name: Living Room
