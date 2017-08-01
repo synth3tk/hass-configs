@@ -23,6 +23,7 @@ homeassistant:
       state_card_mode: break-slider
       stretch_slider: true
       slider_theme:
+        min: 5
         off_when_min: false
 
 
