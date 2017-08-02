@@ -1,7 +1,7 @@
 - alias: Notify Slack when someone arrives home
   trigger:
     platform: state
-    entity_id: group.person_dave, group.person_chris
+    entity_id: group.person_dave, group.person_chris, group.person_lauren
     from: 'not_home'
     to: 'home'
   action:
