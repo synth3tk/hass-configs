@@ -21,3 +21,4 @@ pyozw.sqlite
 .*
 !/.gitignore
 gitupdate.sh
+update.sh
