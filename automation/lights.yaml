@@ -8,7 +8,7 @@
     service: light.turn_on
     data:
       entity_id: group.lights_master
-      transition: 1800
+      transition: 180
       brightness: 255
 
 - alias: Turn off master bedroom lights during the day when no one's home
