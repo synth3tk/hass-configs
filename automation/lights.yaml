@@ -14,7 +14,7 @@
 - alias: Turn off master bedroom lights during the day when no one's home
   trigger:
     platform: state
-    entity_id: group.person_dave
+    entity_id: group.person_dave, group.person_lauren
     from: 'home'
     to: 'not_home'
   condition:
