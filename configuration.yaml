@@ -78,6 +78,16 @@ sensor:
      - ping
      - download
      - upload
+  - platform: snmp
+    host: !secret desktopdave_ip
+    name: desktopdave_snmp
+    baseoid: 1.3.6.1.2.1.1.5.0
+    version: 2c
+  - platform: template
+    sensors:
+      desktopdave:
+        friendly_name: "Dave's Desktop"
+        value_template: "{% if is_state('sensor.desktopdave_snmp', 'desktop-dave') %}System Up{% else %}System Offline{% endif %}"
 
 # Text to speech
 tts:

@@ -58,10 +58,16 @@ lights_living:
    - light.lv_middle
    - light.lv_bottom
 
+devices_master:
+  name: Devices
+  entities:
+    - sensor.desktopdave
+
 room_master:
   name: Master Bedroom
   view: yes
   entities:
+   - group.devices_master
    - group.lights_master
    - media_player.master_bedroom
 
