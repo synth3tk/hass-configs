@@ -1,0 +1,23 @@
+  - alias: desktopdave_shutdown
+    trigger:
+      platform: state
+      entity_id: input_select.pcoptions
+      to: "Shutdown"
+    action:
+      - service: shell_command.shutdown_desktopdave
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.pcoptions
+          option: None
+  - alias: desktopdave_sleep
+    trigger:
+      platform: state
+      entity_id: input_select.pcoptions
+      to: "Sleep"
+    action:
+      - service: shell_command.sleep_desktopdave
+      - service: input_select.select_option
+        data:
+          entity_id: input_select.pcoptions
+          option: None
+
