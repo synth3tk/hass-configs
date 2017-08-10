@@ -163,3 +163,5 @@ input_select:
 shell_command:
   shutdown_desktopdave: !secret desktopdave_shutdown
   sleep_desktopdave: !secret desktopdave_suspend
+
+script: !include_dir_named script/ 
