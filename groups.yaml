@@ -62,6 +62,8 @@ devices_master:
   name: Devices
   entities:
     - sensor.desktopdave
+    - switch.wake_daves_desktop
+    - input_select.pcoptions
 
 room_master:
   name: Master Bedroom

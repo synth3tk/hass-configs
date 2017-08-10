@@ -20,3 +20,12 @@
     data_template:
       message: '{{ trigger.from_state.attributes.friendly_name }} left the home'
 
+- alias: Notify Slack when changing PC power state
+  trigger:
+    platform: state
+    entity_id: input_select.pcoptions
+    from: 'None'
+  action:
+    service: notify.slack
+    data_template:
+      message: 'PC has been set to suspend/shutdown'
