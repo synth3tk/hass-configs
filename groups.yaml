@@ -38,6 +38,7 @@ person_lauren:
   name: Lauren
   entities:
    - device_tracker.lauren_phone_wifi
+   - device_tracker.lauren_gearfit2
 
 people:
   name: Family
