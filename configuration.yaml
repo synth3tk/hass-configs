@@ -62,7 +62,13 @@ logbook:
 # Track the sun
 sun:
 
-# Weather Prediction
+zwave:
+  usb_path: /dev/ttyUSB0
+
+zha:
+  usb_path: /dev/ttyUSB1
+  database_path: /config/zigbee.db
+
 sensor:
   - platform: darksky
     api_key: !secret weather_key
