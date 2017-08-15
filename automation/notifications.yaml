@@ -29,3 +29,12 @@
     service: notify.slack
     data_template:
       message: 'PC has been set to suspend/shutdown'
+
+- alias: 'Notify Slack when a HASS update is available'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.slack
+    data:
+      message: 'Update for Home Assistant is available.'
