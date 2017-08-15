@@ -1,10 +1,5 @@
 alias: Good Night
 sequence:
-  - alias: Set living room lights to night mode
-    service: light.hue_activate_scene
-    data:
-      group_name: "Living Room"
-      scene_name: "HASS Nightlight Living"
   - alias: Turn off master desktop PC
     service: shell_command.sleep_desktopdave
   - alias: Stop master bedroom Roku player

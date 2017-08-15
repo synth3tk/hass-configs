@@ -27,3 +27,33 @@
     data:
       entity_id: group.lights_master
 
+- alias: Turn on living room lights at night when motion is detected
+  trigger:
+    platform: state
+    entity_id: binary_sensor.livingmotion_sensor
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
+  action:
+    service: light.turn_on
+    data_template:
+      entity_id: group.lights_living
+      brightness: >
+        {% if is_state('input_boolean.sleep_mode', 'on') %}
+          1
+        {% else %}
+          100
+        {% endif %}
+
+- alias: Turn off living room lights at night after 5 minutes when no motion detected
+  trigger:
+    platform: state
+    entity_id: binary_sensor.livingmotion_sensor
+    to: 'off'
+    for:
+      minutes: 5
+  action:
+    service: light.turn_off
+    entity_id: group.lights_living
