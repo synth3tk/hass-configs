@@ -17,3 +17,7 @@ sequence:
     data:
       entity_id: group.lights_master
       transition: 90
+  - alias: Set UI to dark theme
+    service: frontend.set_theme
+    data:
+      name: dark_teal
