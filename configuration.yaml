@@ -44,7 +44,7 @@ http:
 updater:
 
 recorder:
-  purge_days: 2
+  purge_days: 7
 
 # Discover some devices automatically
 discovery:
@@ -59,6 +59,8 @@ history:
 
 # View all events in a logbook
 logbook:
+
+logger:
 
 # Track the sun
 sun:
