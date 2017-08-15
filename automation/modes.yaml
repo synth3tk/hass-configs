@@ -1,0 +1,12 @@
+- alias: Activate Good Night
+  trigger:
+    platform: state
+    entity_id: input_boolean.sleep_mode
+    to: 'on'
+    from: 'off'
+  condition:
+    condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
+  action:
+    service: script.good_night
