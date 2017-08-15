@@ -10,7 +10,7 @@ default_view:
    - switch.flux
    - sun.sun
    - group.snapcast_clients
-   - script.good_night
+   - input_boolean.sleep_mode
 
 weather:
   name: Weather
