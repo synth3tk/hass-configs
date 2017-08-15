@@ -67,6 +67,11 @@ devices_master:
     - switch.wake_daves_desktop
     - input_select.pcoptions
 
+sensors_living:
+  name: Sensors
+  entities:
+    - binary_sensor.livingmotion_sensor
+
 room_master:
   name: Master Bedroom
   view: yes
@@ -82,3 +87,4 @@ room_living:
   entities:
    - group.lights_living
    - device_tracker.chromecast
+   - group.sensors_living
