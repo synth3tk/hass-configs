@@ -61,7 +61,7 @@ history:
 logbook:
 
 logger:
-  default: info
+  default: warn
 
 # Track the sun
 sun:
