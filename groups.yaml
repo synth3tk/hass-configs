@@ -71,6 +71,7 @@ sensors_living:
   name: Sensors
   entities:
     - binary_sensor.livingmotion_sensor
+    - sensor.light_sensor_2_1
 
 room_master:
   name: Master Bedroom
