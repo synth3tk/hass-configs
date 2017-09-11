@@ -10,13 +10,7 @@ homeassistant:
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
-  customize:
-    group.all_lights:
-      friendly_name: Lights
-      hidden: false
-    group.all_automations:
-      friendly_name: Automation
-      hidden: false
+  customize: !include customize.yaml
   customize_glob:
     light.*:
       custom_ui_state_card: custom-ui
