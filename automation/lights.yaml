@@ -48,16 +48,16 @@
           100
         {% endif %}
 
-- alias: Turn off living room lights at night after 5 minutes when no motion detected
+- alias: Turn off living room lights during sleep mode when no motion detected
   trigger:
     platform: state
     entity_id: binary_sensor.livingmotion_sensor
     to: 'off'
-    for:
-      minutes: 5
   action:
     service: light.turn_off
-    entity_id: group.lights_living
+    data:
+      entity_id: group.lights_living
+      transition: 5
 
 - alias: Dim the living room lights at night when no motion detected
   trigger:
