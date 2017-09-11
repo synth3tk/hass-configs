@@ -3,6 +3,9 @@ python:
 - '3.4'
 before_install:
 - mv travis_secrets.yaml secrets.yaml
+before_script:
+- mkdir -p /home/.homeassistant/
+- touch /home/.homeassistant/mysensors.json
 install:
 - pip3 install homeassistant
 script:
