@@ -1,0 +1,19 @@
+- alias: Set UI to dark theme after sunset
+  trigger:
+    platform: state
+    entity_id: sun.sun
+    to: 'below_horizon'
+  action:
+    service: frontend.set_theme
+    data:
+      name: dark_red 
+
+- alias: Set UI to default theme after sunrise
+  trigger:
+    platform: state
+    entity_id: sun.sun
+    to: 'above_horizon'
+  action:
+    service: frontend.set_theme
+    data:
+      name: default
