@@ -168,3 +168,10 @@ shell_command:
   sleep_desktopdave: !secret desktopdave_suspend
 
 script: !include_dir_named script/ 
+
+mysensors:
+  gateways:
+    - device: '/dev/ttyUSB2'
+      persistence_file: '/home/homeassistant/.homeassistant/mysensors.json'
+      baud_rate: 115200
+  version: 2.0
