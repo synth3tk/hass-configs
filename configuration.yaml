@@ -59,6 +59,9 @@ logbook:
 
 logger:
   default: warn
+  logs:
+    homeassistant.components.automation: info
+    homeassistant.components.light: debug
 
 # Track the sun
 sun:
