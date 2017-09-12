@@ -6,3 +6,5 @@ group.all_lights:
 group.all_automations:
   friendly_name: Automation
   hidden: false
+sensor.light_sensor_2_1:
+  friendly_name: Light Sensor
