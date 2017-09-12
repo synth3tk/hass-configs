@@ -1,25 +1,3 @@
-- alias: Notify Slack when someone arrives home
-  trigger:
-    platform: state
-    entity_id: group.person_dave, group.person_chris, group.person_lauren
-    from: 'not_home'
-    to: 'home'
-  action:
-    service: notify.slack
-    data_template:
-      message: '{{ trigger.from_state.attributes.friendly_name }} arrived home'
-
-- alias: Notify Slack when someone leaves home
-  trigger:
-    platform: state
-    entity_id: group.person_dave, group.person_chris, group.person_lauren
-    from: 'home'
-    to: 'not_home'
-  action:
-    service: notify.slack
-    data_template:
-      message: '{{ trigger.from_state.attributes.friendly_name }} left the home'
-
 - alias: Notify Slack when changing PC power state
   trigger:
     platform: state
