@@ -49,6 +49,7 @@
         {% endif %}
 
 - alias: Turn off living room lights during sleep mode when no motion detected
+  initial_state: 'off'
   trigger:
     platform: state
     entity_id: binary_sensor.livingmotion_sensor
@@ -59,16 +60,15 @@
       entity_id: group.lights_living
       transition: 5
 
-- alias: Dim the living room lights at night when no motion detected
+- alias: Turn off the living room lights when no motion is detected
   trigger:
     platform: state
     entity_id: binary_sensor.livingmotion_sensor
     to: 'off'
     for:
-      minutes: 6
+      minutes: 11
   action:
-    service: light.turn_on
+    service: light.turn_off
     data:
       entity_id: group.lights_living
-      brightness: 50
-      transition: 3
+      transition: 2
