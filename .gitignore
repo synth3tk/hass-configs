@@ -23,3 +23,5 @@ pyozw.sqlite
 gitupdate.sh
 update.sh
 mysensors.json
+__pycache__
+*.gz
