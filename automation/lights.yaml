@@ -45,7 +45,7 @@
         {% if is_state('input_boolean.sleep_mode', 'on') %}
           1
         {% else %}
-          100
+          {{ 200 - (states("sensor.light_sensor_2_1")) | int }}
         {% endif %}
 
 - alias: Turn off living room lights during sleep mode when no motion detected
