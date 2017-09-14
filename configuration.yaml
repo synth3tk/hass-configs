@@ -175,3 +175,8 @@ mysensors:
       persistence_file: '/home/homeassistant/.homeassistant/mysensors.json'
       baud_rate: 115200
   version: 2.0
+
+light:
+  - platform: hue
+    host: !secret hue_ip
+    allow_hue_groups: true

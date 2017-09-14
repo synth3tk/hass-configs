@@ -7,7 +7,7 @@
   action:
     service: light.turn_on
     data:
-      entity_id: group.lights_master
+      entity_id: light.master_bedroom
       transition: 180
       brightness: 255
 
@@ -25,7 +25,7 @@
   action:
     service: light.turn_off
     data:
-      entity_id: group.lights_master
+      entity_id: light.master_bedroom
 
 - alias: Turn on living room lights at night when motion is detected
   trigger:
@@ -39,7 +39,7 @@
   action:
     service: light.turn_on
     data_template:
-      entity_id: group.lights_living
+      entity_id: light.living_room
       transition: 3
       brightness: >
         {% if is_state('input_boolean.sleep_mode', 'on') %}
@@ -57,7 +57,7 @@
   action:
     service: light.turn_off
     data:
-      entity_id: group.lights_living
+      entity_id: light.living_room
       transition: 5
 
 - alias: Turn off the living room lights when no motion is detected
@@ -70,5 +70,5 @@
   action:
     service: light.turn_off
     data:
-      entity_id: group.lights_living
+      entity_id: light.living_room
       transition: 2

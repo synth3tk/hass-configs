@@ -10,5 +10,5 @@ sequence:
   - alias: Master lights fade off
     service: light.turn_off
     data:
-      entity_id: group.lights_master
+      entity_id: light.master_bedroom
       transition: 90
