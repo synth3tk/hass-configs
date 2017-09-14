@@ -89,3 +89,11 @@ room_living:
    - light.living_room
    - device_tracker.chromecast
    - group.sensors_living
+
+lights_view:
+  name: Lights
+  view: yes
+  icon: mdi:lightbulb-on
+  entities:
+   - group.lights_living
+   - group.lights_master
