@@ -1,5 +1,5 @@
 sensor.desktopdave:
-  icon: desktop-classic
+  icon: mdi:desktop-classic
 group.all_lights:
   friendly_name: Lights
 group.all_automations:
