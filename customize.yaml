@@ -7,3 +7,7 @@ group.all_automations:
   hidden: false
 sensor.light_sensor_2_1:
   friendly_name: Light Sensor
+light.master_bedroom:
+  show_last_changed: true
+light.living_room:
+  show_last_changed: true
