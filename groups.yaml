@@ -48,13 +48,13 @@ people:
    - group.person_lauren
 
 lights_master:
-  name: Master Bedroom
+  name: Master Bedroom Lights
   entities:
    - light.master__dresser
    - light.master__desk
 
 lights_living:
-  name: Living Room
+  name: Living Room Lights
   entities:
    - light.lv_top
    - light.lv_middle
