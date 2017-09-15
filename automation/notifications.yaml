@@ -16,3 +16,23 @@
     service: notify.slack
     data:
       message: 'Update for Home Assistant is available.'
+
+- alias: 'Notify Slack when motion sensor cover is opened'
+  trigger:
+    platform: state
+    entity_id: sensor.livingmotion_burglar
+    to: '3'
+  action:
+    service: notify.slack
+    data:
+      message: 'ALERT: Living room motion sensor is being tampered with!'
+
+- alias: 'Notify Slack when motion sensor cover is closed'
+  trigger:
+    platform: state
+    entity_id: sensor.livingmotion_burglar
+    from: '3'
+  action:
+    service: notify.slack
+    data:
+      message: 'CLEAR: Living room motion sensor is being tampered with'
