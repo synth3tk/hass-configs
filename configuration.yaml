@@ -67,10 +67,10 @@ logger:
 sun:
 
 zwave:
-  usb_path: /dev/ttyUSB0
+  usb_path: /dev/serial/by-id/usb-Silicon_Labs_HubZ_Smart_Home_Controller_C0F00786-if00-port0
 
 zha:
-  usb_path: /dev/ttyUSB1
+  usb_path: /dev/serial/by-id/usb-Silicon_Labs_HubZ_Smart_Home_Controller_C0F00786-if01-port0
   database_path: /config/zigbee.db
 
 sensor:
@@ -171,7 +171,7 @@ script: !include_dir_named script/
 
 mysensors:
   gateways:
-    - device: '/dev/ttyUSB2'
+    - device: '/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0'
       persistence_file: '/home/homeassistant/.homeassistant/mysensors.json'
       baud_rate: 115200
   version: 2.0
