@@ -33,7 +33,7 @@ config:
 
 http:
   # Uncomment this to add a password (recommended!)
-  api_password: !secret http_password
+  # api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
 
@@ -41,7 +41,8 @@ http:
 updater:
 
 recorder:
-  purge_days: 7
+  purge_interval: 3
+  purge_keep_days: 7
 
 # Discover some devices automatically
 discovery:
@@ -60,8 +61,8 @@ logbook:
 logger:
   default: warn
   logs:
-    homeassistant.components.automation: info
-    homeassistant.components.light: debug
+    homeassistant.components.mysensors: debug
+    mysensors: debug
 
 # Track the sun
 sun:
@@ -82,6 +83,8 @@ sensor:
      - apparent_temperature
      - apparent_temperature_max
      - precip_type
+     - humidity
+     - icon
     update_interval: '00:10'
   - platform: speedtest
     monitored_conditions:
@@ -174,9 +177,23 @@ mysensors:
     - device: '/dev/serial/by-id/usb-1a86_USB2.0-Serial-if00-port0'
       persistence_file: '/home/homeassistant/.homeassistant/mysensors.json'
       baud_rate: 115200
-  version: 2.0
+      nodes:
+        2:
+          name: 'master_light'
+        6:
+          name: 'kitchen_multi'
+  version: '2.0'
 
 light:
   - platform: hue
     host: !secret hue_ip
     allow_hue_groups: true
+
+binary_sensor:
+  - platform: template
+    sensors:
+      kitchen_light_1:
+        friendly_name: Kitchen Light Sensor
+        entity_id: sensor.kitchen_multi_1
+        value_template: "{{ states('sensor.kitchen_multi_1')|float > 1 }}"
+        device_class: light

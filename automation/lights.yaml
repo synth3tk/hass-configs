@@ -1,16 +1,3 @@
-- alias: Turn on master bedroom lights at sunset
-  trigger:
-    platform: numeric_state
-    entity_id: sun.sun
-    value_template: '{{ state.attributes.elevation }}'
-    below: 3.0
-  action:
-    service: light.turn_on
-    data:
-      entity_id: light.master_bedroom
-      transition: 180
-      brightness: 255
-
 - alias: Turn off master bedroom lights during the day when no one's home
   trigger:
     platform: state
@@ -45,8 +32,31 @@
         {% if is_state('input_boolean.sleep_mode', 'on') %}
           1
         {% else %}
-          {{ 200 - (states("sensor.light_sensor_2_1")) | int }}
+          200
         {% endif %}
+
+- alias: Turn on bedroom lights based on brightness
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.master_light_1
+    below: 41
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: 'group.person_dave'
+        state: 'home'
+      - condition: state
+        entity_id: 'group.person_lauren'
+        state: 'home'
+
+  action:
+    service: light.turn_on
+    data_template:
+      entity_id: light.master_bedroom
+      transition: 2
+      brightness_pct: >
+        {{ 100 - trigger.to_state.state|int }} 
 
 - alias: Turn off living room lights during sleep mode when no motion detected
   initial_state: 'off'
@@ -72,3 +82,27 @@
     data:
       entity_id: light.living_room
       transition: 2
+
+- alias: Turn off bedroom lights based on brightness
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.master_light_1
+    above: 45
+  action:
+    service: light.turn_off
+    data:
+      entity_id: light.master_bedroom
+      transition: 2
+
+- alias: Turn on master bedroom lights before sunset
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:60:00'
+  action:
+    service: light.turn_on
+    data:
+      entity_id: light.master_bedroom
+      transition: 2
+      brightness_pct: 100
+

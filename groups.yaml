@@ -6,19 +6,17 @@ default_view:
    - group.people
    - group.all_lights
    - input_boolean.rocky_fed
-   - group.all_automations
    - switch.flux
-   - sun.sun
    - group.snapcast_clients
    - input_boolean.sleep_mode
 
 weather:
   name: Weather
   entities:
-   - sensor.dark_sky_summary
+   - sensor.weather_summary
    - sensor.weather_apparent_temperature
    - sensor.weather_daily_high_apparent_temperature
-   - sensor.weather_precip
+   - sun.sun
 
 person_dave:
   name: Dave
@@ -63,16 +61,26 @@ lights_living:
 devices_master:
   name: Devices
   entities:
-    - sensor.desktopdave
-    - switch.wake_daves_desktop
-    - input_select.pcoptions
+   - sensor.desktopdave
+   - switch.wake_daves_desktop
+   - input_select.pcoptions
 
 sensors_living:
-  name: Sensors
+  name: Living Room Sensors
   entities:
-    - binary_sensor.livingmotion_sensor
-    - sensor.light_sensor_2_1
-    - sensor.livingmotion_burglar
+   - binary_sensor.livingmotion_sensor
+   - sensor.livingmotion_burglar
+
+sensors_master:
+  name: Master Bedroom Sensors
+  entities:
+   - sensor.master_light_1
+
+sensors_kitchen:
+  name: Kitchen Sensors
+  entities:
+   - binary_sensor.kitchen_multi_2
+   - binary_sensor.kitchen_light_1
 
 room_master:
   name: Master Bedroom
@@ -82,6 +90,7 @@ room_master:
    - group.devices_master
    - media_player.master_bedroom
    - media_player.roku_4e756m093756
+   - group.sensors_master
 
 room_living:
   name: Living Room
@@ -91,6 +100,12 @@ room_living:
    - device_tracker.chromecast
    - group.sensors_living
 
+room_kitchen:
+  name: Kitchen
+  view: yes
+  entities:
+   - group.sensors_kitchen
+
 lights_view:
   name: Lights
   view: yes
@@ -98,3 +113,11 @@ lights_view:
   entities:
    - group.lights_living
    - group.lights_master
+
+automations_view:
+  name: Automations
+  view: yes
+  icon: mdi:settings
+  entities:
+   - group.all_automations
+

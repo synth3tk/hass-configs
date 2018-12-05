@@ -5,9 +5,13 @@ group.all_lights:
 group.all_automations:
   friendly_name: Automation
   hidden: false
-sensor.light_sensor_2_1:
-  friendly_name: Light Sensor
+sensor.master_light_1:
+  friendly_name: Light Sensor - Master Bedroom
 light.master_bedroom:
   show_last_changed: true
 light.living_room:
   show_last_changed: true
+binary_sensor.kitchen_multi_2:
+  friendly_name: Kitchen Motion Sensor
+sensor.kitchen_multi_1:
+  friendly_name: Kitchen Light Sensor

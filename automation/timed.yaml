@@ -17,3 +17,13 @@
     service: frontend.set_theme
     data:
       name: default
+
+- alias: Turn off sleep mode after sunrise
+  trigger:
+    platform: state
+    entity_id: sun.sun
+    to: 'above_horizon'
+  action:
+    service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.sleep_mode

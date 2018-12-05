@@ -36,3 +36,29 @@
     service: notify.slack
     data:
       message: 'CLEAR: Living room motion sensor is being tampered with'
+
+- alias: Notify Slack when Home Assistant has restarted
+  hide_entity: True
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: notify.slack
+    data:
+      message: 'Home Assistant has been restarted'
+
+- alias: 'Notify Slack when kitchen light has been left on and no motion detected'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.kitchen_multi_2
+    to: 'off'
+    for:
+      minutes: 5
+  condition:
+    condition: state
+    entity_id: binary_sensor.kitchen_light_1
+    state: 'on'
+  action:
+    service: notify.slack
+    data:
+      message: 'Someone left the kitchen light on!'
